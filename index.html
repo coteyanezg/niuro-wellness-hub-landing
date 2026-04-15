@@ -100,7 +100,7 @@
   }
 
   .section {
-    padding: clamp(60px, 10vw, 140px) 0;
+    padding: clamp(44px, 6.5vw, 96px) 0;
     position: relative;
   }
 
@@ -231,7 +231,7 @@
 
   /* ═══ Hero ═══ */
   .hero {
-    padding: clamp(80px, 12vw, 160px) 0 clamp(60px, 9vw, 120px);
+    padding: clamp(52px, 7vw, 88px) 0 clamp(44px, 6vw, 72px);
     position: relative;
   }
 
@@ -313,7 +313,7 @@
   .hero__visual img {
     position: relative;
     width: 100%;
-    max-width: 780px;
+    max-width: 920px;
     height: auto;
     display: block;
     z-index: 1;
@@ -372,7 +372,7 @@
     font-family: var(--serif);
     font-style: italic;
     font-weight: 700;
-    font-size: clamp(38px, 5.4vw, 76px);
+    font-size: clamp(32px, 3.6vw, 52px);
     line-height: 1.05;
     letter-spacing: -0.022em;
     color: var(--navy-ink);
@@ -516,7 +516,7 @@
     font-family: var(--serif);
     font-style: italic;
     font-weight: 500;
-    font-size: clamp(32px, 4.4vw, 58px);
+    font-size: clamp(26px, 3.2vw, 44px);
     line-height: 1.15;
     letter-spacing: -0.02em;
     color: var(--parchment-0);
@@ -569,7 +569,7 @@
     font-family: var(--serif);
     font-style: italic;
     font-weight: 700;
-    font-size: clamp(38px, 5vw, 64px);
+    font-size: clamp(30px, 3.6vw, 50px);
     line-height: 1.05;
     letter-spacing: -0.02em;
     color: var(--navy-ink);
@@ -658,7 +658,7 @@
   .para-quien__title {
     font-family: var(--serif);
     font-weight: 700;
-    font-size: clamp(34px, 4.6vw, 58px);
+    font-size: clamp(28px, 3.4vw, 46px);
     line-height: 1.05;
     letter-spacing: -0.02em;
     color: var(--navy-ink);
@@ -855,7 +855,7 @@
   .stat-card__num {
     font-family: var(--mono);
     font-weight: 800;
-    font-size: clamp(84px, 12vw, 160px);
+    font-size: clamp(64px, 9vw, 120px);
     line-height: 0.95;
     letter-spacing: -0.05em;
     background: var(--gold-gradient);
@@ -910,7 +910,7 @@
     font-family: var(--serif);
     font-style: italic;
     font-weight: 700;
-    font-size: clamp(40px, 5.2vw, 68px);
+    font-size: clamp(32px, 3.8vw, 52px);
     line-height: 1.02;
     letter-spacing: -0.02em;
     color: var(--navy-ink);
@@ -1085,6 +1085,20 @@
     .partners-logos { gap: 24px 32px; }
     .partners-logos img { height: 28px; }
     .partners-logos img.logo--organiza { height: 22px; }
+  }
+
+  /* ═══ Mobile hero fixes ═══ */
+  @media (max-width: 959px) {
+    /* On mobile: limit logo to not eat the full screen */
+    .hero__visual img { max-width: 280px; margin: 0 auto; }
+    /* Stack copy first, logo second */
+    .hero__grid { grid-template-columns: 1fr; }
+    .hero__visual { order: -1; padding: 0; }
+    .hero__visual img { max-width: 220px; }
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 40px 0 36px; }
+    .hero__visual img { max-width: 180px; }
   }
 
   /* ═══ FAQ ═══ */

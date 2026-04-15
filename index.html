@@ -363,6 +363,9 @@
     height: auto;
     display: block;
     z-index: 1;
+    /* Reserve space and show placeholder while SVG loads */
+    min-height: 180px;
+    background: transparent;
     animation: gentle-float 6.5s ease-in-out infinite;
   }
   @media (prefers-reduced-motion: reduce) {
@@ -1206,10 +1209,12 @@
     opacity: 1;
   }
   @media (max-width: 600px) {
-    .partners-block { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .partners-logos { gap: 24px 32px; }
+    /* Center partners on mobile */
+    .partners-block { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+    .partners-label { min-width: auto; }
+    .partners-logos { justify-content: center; gap: 20px 28px; }
     .partners-logos img { height: 28px; }
-    .partners-logos img.logo--organiza { height: 22px; }
+    .partners-logos img.logo--organiza { height: 36px; }
   }
 
   /* ═══ Mobile hero fixes ═══ */
@@ -1219,11 +1224,11 @@
     /* Stack copy first, logo second */
     .hero__grid { grid-template-columns: 1fr; }
     .hero__visual { order: -1; padding: 0; }
-    .hero__visual img { max-width: 220px; }
+    .hero__visual img { max-width: 280px; }
   }
   @media (max-width: 600px) {
     .hero { padding: 40px 0 36px; }
-    .hero__visual img { max-width: 180px; }
+    .hero__visual img { max-width: 260px; }
   }
 
   /* ═══ FAQ ═══ */

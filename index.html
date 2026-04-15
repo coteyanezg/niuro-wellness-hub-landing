@@ -243,6 +243,32 @@
   }
   .nav__cta::after { content: "→"; margin-left: 2px; }
 
+  /* Nav links (center) */
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav__link {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--navy-70);
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 999px;
+    transition: background 180ms ease, color 180ms ease;
+  }
+  .nav__link:hover {
+    background: var(--navy-08);
+    color: var(--navy);
+  }
+  @media (max-width: 680px) {
+    .nav__links { display: none; }
+  }
+
   /* ═══ Hero ═══ */
   .hero {
     padding: clamp(52px, 7vw, 88px) 0 clamp(44px, 6vw, 72px);
@@ -1528,6 +1554,11 @@
       <span class="nav__brand-sep"></span>
       <span class="nav__brand-event">Wellness Hub</span>
     </a>
+    <nav class="nav__links" aria-label="Secciones">
+      <a href="#programa" class="nav__link">Programa</a>
+      <a href="#horario" class="nav__link">Horario</a>
+      <a href="#rsvp" class="nav__link">Inscribirse</a>
+    </nav>
     <a href="#rsvp" class="nav__cta">Reserva tu lugar</a>
   </div>
 </header>
@@ -1725,7 +1756,7 @@
 </section>
 
 <!-- ═══ HORARIO TIMELINE ═══ -->
-<section class="section section--divider horario-section">
+<section class="section section--divider horario-section" id="horario">
   <img src="./assets/asterisco.svg" alt="" class="horario__asterisk" aria-hidden="true">
   <div class="wrap">
     <div class="horario__head reveal">

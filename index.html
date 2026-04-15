@@ -48,6 +48,10 @@
     --gold-amber: #F5A623;
     --gold-gradient: linear-gradient(171deg, #FFD166 0%, #FFBE3D 50%, #F5A623 100%);
 
+    --cobalt:     #3B5FE5;
+    --cobalt-12:  rgba(59, 95, 229, 0.12);
+    --cobalt-22:  rgba(59, 95, 229, 0.22);
+
     --blue:       #7B93DB;
     --blue-bg:    rgba(44, 79, 191, 0.15);
     --green:      #28C840;
@@ -644,8 +648,8 @@
     color: var(--navy);
   }
   .bloque--01 .bloque__badge { background: var(--gold); color: var(--navy); }
-  .bloque--02 .bloque__badge { background: var(--gold); color: var(--navy); }
-  .bloque--03 .bloque__badge { background: var(--gold); color: var(--navy); }
+  .bloque--02 .bloque__badge { background: var(--cobalt); color: #FFFFFF; }
+  .bloque--03 .bloque__badge { background: var(--terracotta); color: #FFFFFF; }
 
   .bloque__title {
     font-family: var(--serif);
@@ -733,9 +737,9 @@
     transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
   }
   .rol-chip:hover {
-    background: var(--navy);
-    color: var(--parchment-0);
-    border-color: var(--navy);
+    background: var(--cobalt);
+    color: #FFFFFF;
+    border-color: var(--cobalt);
   }
   .rol-chip--accent {
     background: var(--gold);
@@ -867,7 +871,7 @@
   .incluye__list li::before {
     content: "→";
     font-family: var(--mono);
-    color: var(--gold-amber);
+    color: var(--cobalt);
     font-weight: 600;
   }
 
@@ -1020,8 +1024,8 @@
   .niuro-hs-form select:focus,
   .niuro-hs-form textarea:focus {
     outline: none !important;
-    border-color: var(--navy) !important;
-    box-shadow: 0 0 0 3px rgba(5, 15, 65, 0.08) !important;
+    border-color: var(--cobalt) !important;
+    box-shadow: 0 0 0 3px var(--cobalt-12) !important;
   }
   .niuro-hs-form .legal-consent-container,
   .niuro-hs-form .hs-richtext {
@@ -1321,6 +1325,7 @@
     border-top: 1px solid var(--navy-12);
     border-bottom: 1px solid var(--navy-12);
     background:
+      radial-gradient(ellipse 680px 360px at 50% 50%, var(--cobalt-12) 0%, transparent 70%),
       linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
   }
   .countdown__head {
@@ -1362,7 +1367,8 @@
   }
   .countdown__unit:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 28px rgba(5,15,65,0.10);
+    box-shadow: 0 8px 28px rgba(59,95,229,0.12);
+    border-color: var(--cobalt-22);
   }
   .countdown__num {
     display: block;
@@ -1371,7 +1377,7 @@
     font-size: clamp(48px, 8vw, 96px);
     line-height: 1;
     letter-spacing: -0.04em;
-    color: var(--navy-ink);
+    color: var(--cobalt);
     font-feature-settings: "tnum" 1;
   }
   .countdown__label {
@@ -1868,5 +1874,6 @@
   })();
 </script>
 
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
 </body>
 </html>

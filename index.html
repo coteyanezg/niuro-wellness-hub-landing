@@ -1493,6 +1493,19 @@
   .bloque.reveal:nth-child(2) { transition-delay: 100ms; }
   .bloque.reveal:nth-child(3) { transition-delay: 200ms; }
 
+  /* Restore rotation after reveal animation completes */
+  .bloque--01.reveal.is-visible { transform: rotate(-2.5deg); }
+  .bloque--02.reveal.is-visible { transform: rotate(1.5deg); }
+  .bloque--03.reveal.is-visible { transform: rotate(-1.2deg); }
+
+  /* Hover still straightens — override with combined transform */
+  .bloque--01.reveal.is-visible:hover,
+  .bloque--02.reveal.is-visible:hover,
+  .bloque--03.reveal.is-visible:hover { transform: rotate(0deg) translate(-2px, -2px); }
+  .bloque--01.reveal.is-visible:active,
+  .bloque--02.reveal.is-visible:active,
+  .bloque--03.reveal.is-visible:active { transform: rotate(0deg) translate(2px, 2px); }
+
   /* ═══ Mobile refinements ═══ */
   @media (max-width: 959px) {
     .hero__grid { gap: 36px; }

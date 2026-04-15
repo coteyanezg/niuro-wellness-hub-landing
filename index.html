@@ -1542,6 +1542,26 @@
     .hero::after { display: none; }
     .nav__cta { padding: 8px 14px; font-size: 11px; letter-spacing: 1.2px; }
     .btn { padding: 14px 22px; font-size: 13px; }
+
+    /* Disable card rotation on mobile — readability first */
+    .bloque--01,
+    .bloque--02,
+    .bloque--03 { transform: rotate(0deg) !important; }
+    .bloque:hover  { transform: translate(-2px, -2px) !important; }
+    .bloque:active { transform: translate(2px, 2px) !important; }
+
+    /* Map height reduced on mobile */
+    .faq__map iframe { height: 210px; }
+
+    /* Footer padding tighter on mobile */
+    footer.section { padding: 48px 0 36px; }
+
+    /* RSVP button full-width on mobile for better tap target */
+    .niuro-hs-form .hs-button {
+      width: 100% !important;
+      justify-content: center !important;
+      padding: 18px 32px !important;
+    }
   }
 </style>
 </head>

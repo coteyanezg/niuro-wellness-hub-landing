@@ -636,11 +636,11 @@
     transition: transform 120ms ease, box-shadow 120ms ease;
   }
   .bloque:hover {
-    transform: translate(-2px, -2px);
+    transform: rotate(0deg) translate(-2px, -2px);
     box-shadow: 6px 6px 0 var(--navy);
   }
   .bloque:active {
-    transform: translate(2px, 2px);
+    transform: rotate(0deg) translate(2px, 2px);
     box-shadow: 2px 2px 0 var(--navy);
   }
 
@@ -669,6 +669,18 @@
   .bloque--01 .bloque__badge { background: var(--gold); }
   .bloque--02 .bloque__badge { background: var(--cobalt); }
   .bloque--03 .bloque__badge { background: var(--terracotta); }
+
+  /* Fizz-style scattered rotation */
+  .bloque--01 { transform: rotate(-2.5deg); }
+  .bloque--02 { transform: rotate(1.5deg); }
+  .bloque--03 { transform: rotate(-1.2deg); }
+
+  /* SVG icon inside badge */
+  .bloque__badge svg {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+  }
 
   .bloque__title {
     font-family: var(--serif);
@@ -1656,21 +1668,41 @@
 
     <div class="programa__grid">
       <article class="bloque bloque--01 reveal">
-        <div class="bloque__badge">💬</div>
+        <div class="bloque__badge">
+          <!-- MessageCircle icon — charla -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#050F41" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
         <span class="bloque__step">Bloque 01</span>
         <h3 class="bloque__title">Charla · Liderazgo femenino en tech</h3>
         <p class="bloque__body">Una conversación corta, honesta y con data. Qué significa liderar desde lo femenino en una industria que suele medirse en otro código.</p>
       </article>
 
       <article class="bloque bloque--02 reveal">
-        <div class="bloque__badge">🧘</div>
+        <div class="bloque__badge">
+          <!-- Leaf icon — yoga / wellness -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+          </svg>
+        </div>
         <span class="bloque__step">Bloque 02</span>
         <h3 class="bloque__title">Clase de yoga guiada</h3>
         <p class="bloque__body">Práctica accesible para todos los niveles. No necesitas experiencia previa. <strong>Trae tu mat.</strong></p>
       </article>
 
       <article class="bloque bloque--03 reveal">
-        <div class="bloque__badge">🎁</div>
+        <div class="bloque__badge">
+          <!-- Gift icon — conexión + welcome bag -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 12 20 22 4 22 4 12"/>
+            <rect x="2" y="7" width="20" height="5"/>
+            <line x1="12" y1="22" x2="12" y2="7"/>
+            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+          </svg>
+        </div>
         <span class="bloque__step">Bloque 03</span>
         <h3 class="bloque__title">Conversación + welcome bag + comida</h3>
         <p class="bloque__body">Un espacio abierto para conectar con otras mujeres del ecosistema. Te vas con regalo, comida y gente nueva en tu órbita.</p>

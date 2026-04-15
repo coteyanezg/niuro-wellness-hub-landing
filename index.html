@@ -1140,6 +1140,80 @@
   .footer__legal a:hover { color: var(--navy); }
   .footer__legal-sep { color: var(--navy-30); }
 
+  /* ═══ Countdown ═══ */
+  .countdown-section {
+    padding: clamp(56px, 8vw, 96px) 0;
+    border-top: 1px solid var(--navy-12);
+    border-bottom: 1px solid var(--navy-12);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+  }
+  .countdown__head {
+    max-width: 680px;
+    margin-bottom: 40px;
+  }
+  .countdown__title {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--navy-ink);
+    margin-top: 20px;
+  }
+  .countdown__title em {
+    font-style: italic;
+    background: linear-gradient(to bottom, transparent 0%, transparent 62%, var(--gold) 62%, var(--gold) 100%);
+    padding: 0 4px;
+  }
+  .countdown__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(12px, 2vw, 24px);
+    max-width: 860px;
+  }
+  .countdown__unit {
+    padding: clamp(20px, 3vw, 32px) clamp(14px, 2vw, 24px);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--navy-08);
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 240ms ease;
+  }
+  .countdown__unit:hover { transform: translateY(-2px); }
+  .countdown__num {
+    display: block;
+    font-family: var(--mono);
+    font-weight: 800;
+    font-size: clamp(40px, 7vw, 84px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--navy-ink);
+    font-feature-settings: "tnum" 1;
+  }
+  .countdown__label {
+    display: block;
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--navy-50);
+  }
+  .countdown__live {
+    margin-top: 28px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(22px, 2.8vw, 32px);
+    color: var(--gold-amber);
+    font-weight: 600;
+  }
+  @media (max-width: 560px) {
+    .countdown__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
   /* ═══ Reveal animation (subtle) ═══ */
   @media (prefers-reduced-motion: no-preference) {
     .reveal {
@@ -1267,6 +1341,23 @@
         <img src="./assets/wellness-hub-logo.svg" alt="Niuro Wellness Hub · Women × Tech">
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══ COUNTDOWN ═══ -->
+<section class="countdown-section">
+  <div class="wrap">
+    <div class="countdown__head reveal">
+      <span class="eyebrow">Cuenta regresiva</span>
+      <h2 class="countdown__title">Falta poco para <em>reunirnos</em>.</h2>
+    </div>
+    <div class="countdown__grid reveal" id="countdown" role="timer" aria-live="polite">
+      <div class="countdown__unit"><span class="countdown__num" id="cd-days">00</span><span class="countdown__label">Días</span></div>
+      <div class="countdown__unit"><span class="countdown__num" id="cd-hours">00</span><span class="countdown__label">Horas</span></div>
+      <div class="countdown__unit"><span class="countdown__num" id="cd-mins">00</span><span class="countdown__label">Minutos</span></div>
+      <div class="countdown__unit"><span class="countdown__num" id="cd-secs">00</span><span class="countdown__label">Segundos</span></div>
+    </div>
+    <p class="countdown__live" id="cd-live" hidden>Estamos en vivo.</p>
   </div>
 </section>
 
@@ -1534,6 +1625,38 @@
   } else {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
   }
+
+  // Countdown — 25 abr 2026 · 10:00 CLT (UTC-4)
+  (function(){
+    const target = new Date('2026-04-25T10:00:00-04:00').getTime();
+    const pad = n => String(Math.max(0, n)).padStart(2, '0');
+    const $d = document.getElementById('cd-days');
+    const $h = document.getElementById('cd-hours');
+    const $m = document.getElementById('cd-mins');
+    const $s = document.getElementById('cd-secs');
+    const $live = document.getElementById('cd-live');
+    const $grid = document.getElementById('countdown');
+    if (!$d) return;
+    function tick(){
+      const diff = target - Date.now();
+      if (diff <= 0) {
+        $d.textContent = $h.textContent = $m.textContent = $s.textContent = '00';
+        if ($live) { $live.hidden = false; }
+        if ($grid) $grid.style.opacity = '0.55';
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      $d.textContent = pad(d);
+      $h.textContent = pad(h);
+      $m.textContent = pad(m);
+      $s.textContent = pad(s);
+      requestAnimationFrame(() => setTimeout(tick, 1000));
+    }
+    tick();
+  })();
 </script>
 
 </body>

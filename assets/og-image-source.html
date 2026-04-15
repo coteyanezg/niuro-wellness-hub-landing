@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #FAF9F5;
+    font-family: 'Host Grotesk', sans-serif;
+    position: relative;
+  }
+
+  /* Gold top bar */
+  .topbar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #FFD166 0%, #F5A623 100%);
+  }
+
+  /* Navy left column */
+  .left {
+    position: absolute;
+    top: 0; left: 0;
+    width: 560px;
+    height: 630px;
+    background: #050F41;
+    padding: 64px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFD166;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .eyebrow::before {
+    content: '■';
+    font-size: 10px;
+  }
+
+  .headline {
+    color: #FAF9F5;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .headline em {
+    font-style: italic;
+    font-weight: 600;
+    color: #FFD166;
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .meta-line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: rgba(250,249,245,0.65);
+    letter-spacing: 0.04em;
+  }
+  .meta-line strong {
+    color: #FAF9F5;
+    font-weight: 500;
+  }
+
+  /* Right column — parchment */
+  .right {
+    position: absolute;
+    top: 0; left: 560px;
+    width: 640px;
+    height: 630px;
+    background: #FAF9F5;
+    padding: 64px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .logo-wrap img {
+    height: 48px;
+    width: auto;
+  }
+
+  .event-logo-wrap img {
+    max-height: 260px;
+    max-width: 460px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #050F41;
+    background: rgba(5,15,65,0.08);
+    border: 1px solid rgba(5,15,65,0.15);
+    border-radius: 4px;
+    padding: 6px 12px;
+  }
+
+  /* Constellation dots */
+  .dot {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(5,15,65,0.12);
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<!-- Constellation dots -->
+<div class="dot" style="width:4px;height:4px;top:120px;left:620px;"></div>
+<div class="dot" style="width:3px;height:3px;top:200px;left:780px;"></div>
+<div class="dot" style="width:5px;height:5px;top:300px;left:660px;"></div>
+<div class="dot" style="width:3px;height:3px;top:400px;left:900px;"></div>
+<div class="dot" style="width:4px;height:4px;top:180px;left:1050px;"></div>
+<div class="dot" style="width:6px;height:6px;top:470px;left:740px;"></div>
+
+<!-- LEFT — navy -->
+<div class="left">
+  <div class="eyebrow">Wellness Hub · Women × Tech</div>
+
+  <div class="headline">
+    Wellness no es<br>soft skill,<br>es <em>performance.</em>
+  </div>
+
+  <div class="meta">
+    <div class="meta-line">📅 <strong>Sábado 25 de abril, 2026</strong></div>
+    <div class="meta-line">📍 <strong>La Reina, Santiago</strong></div>
+    <div class="meta-line">👥 <strong>50 cupos · Sin costo</strong></div>
+  </div>
+</div>
+
+<!-- RIGHT — parchment -->
+<div class="right">
+  <div class="logo-wrap">
+    <img src="niuro-logo-navy.svg" alt="Niuro">
+  </div>
+
+  <div class="event-logo-wrap">
+    <img src="wellness-hub-logo.svg" alt="Niuro Wellness Hub">
+  </div>
+
+  <div class="badge">Edición 01 · 2026</div>
+</div>
+
+</body>
+</html>

@@ -228,11 +228,18 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-decoration: none;
-    transition: transform 200ms cubic-bezier(0.34,1.56,0.64,1), background 200ms ease;
+    border: 2px solid var(--navy);
+    box-shadow: 3px 3px 0 var(--navy);
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
   }
   .nav__cta:hover {
     background: var(--navy-ink);
-    transform: translateY(-1px);
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 rgba(5,15,65,0.5);
+  }
+  .nav__cta:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 var(--navy);
   }
   .nav__cta::after { content: "→"; margin-left: 2px; }
 
@@ -620,42 +627,54 @@
   }
 
   .bloque {
-    padding: 40px 36px;
+    padding: 36px 32px;
     background: #FFFFFF;
-    border: 1px solid rgba(5,15,65,0.10);
+    border: 2px solid var(--navy);
     border-radius: 20px;
     position: relative;
-    box-shadow: 0 2px 16px rgba(5,15,65,0.06);
-    transition: transform 300ms cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 300ms ease;
+    box-shadow: 4px 4px 0 var(--navy);
+    transition: transform 120ms ease, box-shadow 120ms ease;
   }
   .bloque:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 36px rgba(5, 15, 65, 0.10);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--navy);
+  }
+  .bloque:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--navy);
+  }
+
+  .bloque__step {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy-50);
+    margin-bottom: 20px;
   }
 
   .bloque__badge {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
     display: grid;
     place-items: center;
-    font-family: var(--mono);
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 24px;
+    font-size: 24px;
+    margin-bottom: 14px;
     background: var(--gold);
     color: var(--navy);
   }
-  .bloque--01 .bloque__badge { background: var(--gold); color: var(--navy); }
-  .bloque--02 .bloque__badge { background: var(--cobalt); color: #FFFFFF; }
-  .bloque--03 .bloque__badge { background: var(--terracotta); color: #FFFFFF; }
+  .bloque--01 .bloque__badge { background: var(--gold); }
+  .bloque--02 .bloque__badge { background: var(--cobalt); }
+  .bloque--03 .bloque__badge { background: var(--terracotta); }
 
   .bloque__title {
     font-family: var(--serif);
     font-weight: 700;
-    font-size: clamp(22px, 2.4vw, 30px);
-    line-height: 1.15;
+    font-size: clamp(20px, 2.2vw, 26px);
+    line-height: 1.2;
     color: var(--navy);
     letter-spacing: -0.02em;
     margin-bottom: 14px;
@@ -1075,7 +1094,7 @@
   /* ═══ PARTNERS ═══ */
   .partners-section {
     background: var(--navy);
-    padding: clamp(64px, 8vw, 96px) 0;
+    padding: clamp(36px, 5vw, 52px) 0;
   }
   .partners-inner {
     max-width: 1120px;
@@ -1089,7 +1108,7 @@
     display: flex;
     align-items: center;
     gap: clamp(32px, 5vw, 64px);
-    padding: 36px 0;
+    padding: 24px 0;
   }
   .partners-block + .partners-block {
     border-top: 1px solid rgba(255,209,102,0.18);
@@ -1130,8 +1149,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 20px;
-    padding: 56px 0 40px;
+    gap: 16px;
+    padding: 28px 0 20px;
   }
   .partners-block--organiza .partners-label {
     min-width: auto;
@@ -1139,7 +1158,7 @@
     letter-spacing: 0.20em;
   }
   .partners-logos img.logo--organiza {
-    height: 56px;
+    height: 72px;
     opacity: 1;
   }
   @media (max-width: 600px) {
@@ -1186,12 +1205,18 @@
   }
   .faq__item {
     background: #FFFFFF;
-    border: 1px solid rgba(5,15,65,0.08);
+    border: 2px solid var(--navy-30);
     border-radius: 16px;
     padding: 20px 24px;
     margin-bottom: 0;
+    box-shadow: 3px 3px 0 var(--navy-12);
+    transition: transform 120ms ease, box-shadow 120ms ease;
   }
-  .faq__item:last-child { border-bottom: 1px solid rgba(5,15,65,0.08); }
+  .faq__item:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--navy-12);
+  }
+  .faq__item:last-child { border-bottom: 2px solid var(--navy-30); }
 
   .faq__q {
     font-family: var(--serif);
@@ -1359,16 +1384,16 @@
   .countdown__unit {
     padding: clamp(24px, 3.5vw, 40px) clamp(16px, 2.5vw, 28px);
     background: #FFFFFF;
-    border: 1px solid rgba(5,15,65,0.08);
+    border: 2px solid var(--navy-30);
     border-radius: 16px;
     text-align: center;
-    box-shadow: 0 2px 16px rgba(5,15,65,0.06);
-    transition: transform 240ms ease, box-shadow 240ms ease;
+    box-shadow: 3px 3px 0 var(--cobalt-22);
+    transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
   }
   .countdown__unit:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 28px rgba(59,95,229,0.12);
-    border-color: var(--cobalt-22);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--cobalt-22);
+    border-color: var(--cobalt);
   }
   .countdown__num {
     display: block;
@@ -1631,19 +1656,22 @@
 
     <div class="programa__grid">
       <article class="bloque bloque--01 reveal">
-        <div class="bloque__badge">1</div>
+        <div class="bloque__badge">💬</div>
+        <span class="bloque__step">Bloque 01</span>
         <h3 class="bloque__title">Charla · Liderazgo femenino en tech</h3>
         <p class="bloque__body">Una conversación corta, honesta y con data. Qué significa liderar desde lo femenino en una industria que suele medirse en otro código.</p>
       </article>
 
       <article class="bloque bloque--02 reveal">
-        <div class="bloque__badge">2</div>
+        <div class="bloque__badge">🧘</div>
+        <span class="bloque__step">Bloque 02</span>
         <h3 class="bloque__title">Clase de yoga guiada</h3>
         <p class="bloque__body">Práctica accesible para todos los niveles. No necesitas experiencia previa. <strong>Trae tu mat.</strong></p>
       </article>
 
       <article class="bloque bloque--03 reveal">
-        <div class="bloque__badge">3</div>
+        <div class="bloque__badge">🎁</div>
+        <span class="bloque__step">Bloque 03</span>
         <h3 class="bloque__title">Conversación + welcome bag + comida</h3>
         <p class="bloque__body">Un espacio abierto para conectar con otras mujeres del ecosistema. Te vas con regalo, comida y gente nueva en tu órbita.</p>
       </article>

@@ -1727,6 +1727,18 @@
     color: var(--navy-ink);
     letter-spacing: -0.01em;
   }
+  .hero__lede {
+    margin-top: 20px;
+    max-width: 560px;
+    font-family: var(--mono);
+    font-size: clamp(14.5px, 1.15vw, 16px);
+    line-height: 1.7;
+    color: var(--navy-70);
+  }
+  .hero__lede em {
+    font-style: italic;
+    color: var(--navy-ink);
+  }
 
   @media (max-width: 720px) {
     .info-strip { grid-template-columns: repeat(2, 1fr); gap: 10px 0; padding: 14px 2px; }
@@ -1938,6 +1950,10 @@
           <span class="hero__kicker-label">Una mañana —</span>
           <span class="hero__kicker-body"><em>Yoga · Panel · Brunch · Regalos</em></span>
         </div>
+
+        <p class="hero__lede">
+          Una mañana pensada para <em>pausar, conectar y recargar</em>. Charla sobre liderazgo femenino en tecnología, clase de yoga guiada y una conversación abierta con otras mujeres del ecosistema. Welcome bag y comida.
+        </p>
 
         <div class="info-strip" role="group" aria-label="Datos del evento">
           <div class="info-strip__cell">
